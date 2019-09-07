@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import EventBus, { UPDATE_TODO_COUNT } from "./EventBus";
-
 export default {
   props: {
     count: { type: Number }

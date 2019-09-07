@@ -21,7 +21,6 @@ import TodoEmpty from "./TodoEmpty";
 import NextTodo from "./NextTodo";
 import TodoCount from "./TodoCount";
 import AddTodoButton from "./AddTodoButton";
-import EventBus, { ADD_TODO, REMOVE_TODO } from "./EventBus";
 
 export default {
   components: { TodoList, TodoEmpty, NextTodo, TodoCount, AddTodoButton },
@@ -30,15 +29,6 @@ export default {
     return {
       todoList: []
     };
-  },
-
-  beforeMount() {
-    EventBus.$on(ADD_TODO, () => {
-      this.addTodo();
-    });
-    EventBus.$on(REMOVE_TODO, () => {
-      this.removeTodo(index);
-    });
   },
 
   computed: {
