@@ -12,7 +12,7 @@ export const getters = {
     return getters.todoCount() > 0;
   },
   nextTodo() {
-    return getters.todoCount() > 0 ? state.todoList[0].todo : '(未登録)';
+    return getters.todoCount() > 0 ? state.todoList[0].todo : '未登録';
   }
 };
 
