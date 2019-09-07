@@ -8,9 +8,12 @@ import {
   addTodo,
   removeTodo
 } from './writer';
+import EventBus, { UPDATE_NEXT_TODO_TEXT } from './EventBus';
 
 const updateAll = () => {
   const { count, nextTodoText } = readData();
+
+  EventBus.$emit(UPDATE_NEXT_TODO_TEXT, nextTodoText);
 
   writeTodoCount(count);
   toggleTodoList(count);
