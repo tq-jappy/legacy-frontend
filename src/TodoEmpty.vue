@@ -6,22 +6,8 @@
 import EventBus, { UPDATE_TODO_COUNT } from "./EventBus";
 
 export default {
-  data() {
-    return {
-      count: 0
-    };
-  },
-
-  computed: {
-    visible() {
-      return this.count === 0;
-    }
-  },
-
-  beforeMount() {
-    EventBus.$on(UPDATE_TODO_COUNT, count => {
-      this.count = count;
-    });
+  props: {
+    visible: { type: Boolean, default: false }
   }
 };
 </script>

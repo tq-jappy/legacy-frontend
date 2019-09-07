@@ -3,19 +3,11 @@
 </template>
 
 <script>
-import EventBus, { UPDATE_NEXT_TODO_TEXT } from './EventBus';
+import EventBus, { UPDATE_NEXT_TODO_TEXT } from "./EventBus";
 
 export default {
-  data() {
-    return {
-      nextTodoText: ""
-    };
-  },
-
-  beforeMount() {
-    EventBus.$on(UPDATE_NEXT_TODO_TEXT, (nextTodoText) => {
-      this.nextTodoText = nextTodoText;
-    });
+  props: {
+    nextTodoText: { type: String, default: "" }
   }
 };
 </script>
