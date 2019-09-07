@@ -2,7 +2,7 @@
   <div id="todoList" v-show="visible">
     <div v-for="(todo, index) in todoList" :key="todo.key" class="todo">
       <input type="text" :value="todo.todo" @input="updateTodo(index, $event.target.value)" />
-      <button class="delete">削除</button>
+      <button class="delete" @click="removeTodo(index)">削除</button>
     </div>
   </div>
 </template>
@@ -17,6 +17,9 @@ export default {
   methods: {
     updateTodo(index, value) {
       this.$emit("update", { index, value });
+    },
+    removeTodo(index) {
+      this.$emit("remove", index);
     }
   }
 };

@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import EventBus, { UPDATE_NEXT_TODO_TEXT } from "./EventBus";
-
 export default {
   props: {
     nextTodoText: { type: String, default: "" }
